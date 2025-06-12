@@ -1,0 +1,26 @@
+[
+    {
+        "date": "2025-11-28",
+        "event": "Black Friday Sale"
+    },
+    {
+        "date": "2025-12-01",
+        "event": "Cyber Monday Sale"
+    },
+    {
+        "date": "2025-12-24",
+        "event": "Christmas Eve Sale"
+    },
+    {
+        "date": "2025-12-25",
+        "event": "Christmas Day Sale"
+    },
+    {
+        "date": "2025-12-31",
+        "event": "New Year's Eve Sale"
+    },
+    {
+        "date": "2026-01-01",
+        "event": "New Year's Day Sale"
+    }
+]

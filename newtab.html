@@ -16,7 +16,7 @@
         <a href="https://retainful.com/blog">Blog</a>
     </header>
     <div id="quote-container">
-        <p id="quote"></p>
+        <p id="quote">Loading inspiring quote...</p>
     </div>
     <div id="calendar-container">
         <h2>BFCM Calendar</h2>
@@ -31,26 +31,28 @@
                 <button id="next-month">⪼</button>
             </div>
         </div>
-        <table id="calendar">
-            <thead>
-                <tr>
-                    <th>Sun</th>
-                    <th>Mon</th>
-                    <th>Tue</th>
-                    <th>Wed</th>
-                    <th>Thu</th>
-                    <th>Fri</th>
-                    <th>Sat</th>
-                </tr>
-            </thead>
-            <tbody>
-            </tbody>
-        </table>
+        <div id="calendar">
+            <!-- Day headers -->
+            <div class="calendar-header-row">
+                <div class="calendar-header-cell">Sun</div>
+                <div class="calendar-header-cell">Mon</div>
+                <div class="calendar-header-cell">Tue</div>
+                <div class="calendar-header-cell">Wed</div>
+                <div class="calendar-header-cell">Thu</div>
+                <div class="calendar-header-cell">Fri</div>
+                <div class="calendar-header-cell">Sat</div>
+            </div>
+            <!-- Calendar days container -->
+            <div class="calendar-grid" id="calendar-days">
+            </div>
+        </div>
     </div>
     <footer>
-        <a href="https://retainful.com"><img href="https://retainful.com" src="Retainful Logo.png" alt="Retainful Logo"
-                id="logo"></a>
+        <a href="https://retainful.com">
+            <img href="https://retainful.com" src="Images/Retainful Logo.png" alt="Retainful Logo" id="logo">
+        </a>
     </footer>
+
     <script src="content.js"></script>
 </body>
 
