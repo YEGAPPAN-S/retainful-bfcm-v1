@@ -1,0 +1,19 @@
+{
+    "manifest_version": 3,
+    "name": "Retainful - Motivational Quotes Extension",
+    "description": "Get inspired with motivational quotes every time you open a new tab.",
+    "version": "1.0",
+    "permissions": [
+      "storage"
+    ],
+    "chrome_url_overrides": {
+      "newtab": "newtab.html"
+    },
+    "icons": {
+      "48": "icon.png"
+    },
+    "action": {
+      "default_icon": "icon.png"
+    }
+  }
+  
