@@ -38,18 +38,18 @@ footer {
 
 #quote-container {
     text-align: left;
-    width: 50%;
+    width: 60%;
 }
 
 #quote {
-    font-size: 54px;
+    font-size: 64px;
     color: #1B1B22;
     line-height: 1.5;
     font-weight: 700;
 }
 
 #calendar-container {
-    width: 50%;
+    width: 40%;
     flex: 1;
     padding: 20px;
     text-align: center;
@@ -101,79 +101,35 @@ button {
     border-radius: 30px;
 }
 
-/* Calendar Grid Styles */
 #calendar {
     width: 100%;
-    /* height: 350px; */
-    display: flex;
-    flex-direction: column;
+    border-collapse: collapse;
+    height: 350px;
+    ;
 }
 
-.calendar-header-row {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    gap: 1px;
-    margin-bottom: 1px;
-}
-
-.calendar-header-cell {
-    padding: 15px;
-    text-align: center;
-    background-color: #f85c1c;
-    color: #fff;
-    font-weight: 700;
-    font-size: 14px;
-}
-
-.calendar-grid {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    gap: 1px;
-    flex: 1;
-}
-
-.calendar-day {
+th,
+td {
     padding: 15px;
     text-align: center;
     color: #1B1B22;
     font-size: 14px;
-    background-color: #fff;
-    border: 1px solid #f85c1c;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    min-height: 60px;
 }
 
-.calendar-day.today {
+th {
+    background-color: #f85c1c;
+    color: #fff;
+    font-weight: 700;
+    border: 1px solid #fff;
+}
+
+td {
+    background-color: #fff;
+    border: 1px solid #f85c1c;
+}
+
+.today {
     background-color: #f85c1c;
     color: #fff;
     font-weight: bold;
-}
-
-.calendar-day.empty {
-    background-color: transparent;
-    /* border: none; */
-}
-
-.event {
-    background-color: #f85c1c;
-    color: #fff;
-    font-weight: 500;
-    border-radius: 5px;
-    padding: 5px;
-    margin-top: 5px;
-    font-size: 12px;
-    width: 100%;
-    box-sizing: border-box;
-}
-
-.calendar-day.today .event {
-    background-color: rgba(255, 255, 255, 0.3);
-    color: #fff;
-}
-.calendar-day.overflow-day {
-    /* background-color: #f0f0f0;
-    opacity: 0.8; */
 }

@@ -10,10 +10,10 @@
       "newtab": "newtab.html"
     },
     "icons": {
-      "48": "Images/icon.png"
+      "48": "icon.png"
     },
     "action": {
-      "default_icon": "Images/icon.png"
+      "default_icon": "icon.png"
     }
   }
   
