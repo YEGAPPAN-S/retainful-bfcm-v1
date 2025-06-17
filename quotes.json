@@ -1,12 +1,272 @@
 [
-    {
-      "quote": "Success is not final, failure is not fatal: It is the courage to continue that counts. – Winston Churchill"
-    },
-    {
-      "quote": "The way to get started is to quit talking and begin doing. – Walt Disney"
-    },
-    {
-      "quote": "Your time is limited, so don't waste it living someone else's life. – Steve Jobs"
-    }
-  ]
-  
+  {
+    "quote": "Global e\u2011commerce sales hit $6.01\u202fT in 2024, projected to reach $6.42\u202fT in 2025 (+6.9%)."
+  },
+  {
+    "quote": "Online retail will account for 20.5% of global retail sales in 2025, rising to 22.5% by 2028."
+  },
+  {
+    "quote": "There will be 2.77\u202fB online shoppers worldwide in 2025 (~33% of population)."
+  },
+  {
+    "quote": "Number of online shoppers will grow to 2.86\u202fB by 2026."
+  },
+  {
+    "quote": "Retail e\u2011commerce revenue is expected to be $7.4\u202fT in 2025."
+  },
+  {
+    "quote": "Combined B2B + B2C e\u2011commerce was $34.1\u202fT in 2024, forecast to hit $71\u202fT by 2030."
+  },
+  {
+    "quote": "US e\u2011commerce totaled $1.19\u202fT in 2024, set to reach $1.3\u202fT in 2025."
+  },
+  {
+    "quote": "US e\u2011commerce was 16.13% of US retail in 2024, up from 15.3% in 2023."
+  },
+  {
+    "quote": "China and the US combined represent ~70% of global e\u2011commerce sales."
+  },
+  {
+    "quote": "Over 28\u202fM active online stores are operating worldwide."
+  },
+  {
+    "quote": "34% of consumers are shopping online weekly."
+  },
+  {
+    "quote": "99% of shoppers read at least one product review before buying."
+  },
+  {
+    "quote": "Retail e\u2011commerce sales growth was 7.65% YoY in 2024, and projected 6.86% in 2025."
+  },
+  {
+    "quote": "Mobile commerce made up 57% of global e\u2011commerce sales in 2024\u2014projected to 63% by 2028."
+  },
+  {
+    "quote": "Mobile purchases generated $2.07\u202fT in sales in 2024."
+  },
+  {
+    "quote": "Global cart abandonment averages 69.6\u201374.1% in 2024."
+  },
+  {
+    "quote": "Abandonment on mobile is 78.3%, desktop 67.5%."
+  },
+  {
+    "quote": "APAC cart abandonment is 81.2%, EMEA 77.6%, Americas 71.2%."
+  },
+  {
+    "quote": "Product recommendations can boost revenue by up to 31%."
+  },
+  {
+    "quote": "Stores with user reviews receive 270% more views than those without."
+  },
+  {
+    "quote": "A 1-second website delay reduces conversions by 7% and pageviews by 11%."
+  },
+  {
+    "quote": "Global social commerce sales hit $3.57\u202fT in 2024."
+  },
+  {
+    "quote": "85% of global consumers have shopped online at least once."
+  },
+  {
+    "quote": "Turkey leads global e\u2011commerce growth with an 11.6% CAGR 2024\u20132029."
+  },
+  {
+    "quote": "Brazil\u2019s e\u2011commerce is projected to grow at 11.6% CAGR 2024\u20132029."
+  },
+  {
+    "quote": "Cross-border e\u2011commerce hit $1.54\u202fT in 2024, up 26.1% YoY."
+  },
+  {
+    "quote": "Amazon captured 40.9% of US e\u2011commerce in 2024."
+  },
+  {
+    "quote": "US Q4 2024 online sales reached $352.9\u202fB, growing 24.6% YoY."
+  },
+  {
+    "quote": "Retail e\u2011commerce in the US grew 108% faster than physical retail Q4 2023\u2013Q4 2024."
+  },
+  {
+    "quote": "Global B2B e\u2011commerce GMV reached $28.1\u202fT in 2024."
+  },
+  {
+    "quote": "Email generates an average ROI of $36\u2013$68 per $1 spent, depending on region."
+  },
+  {
+    "quote": "Automated emails account for 37% of total email revenue but only 2% of sends."
+  },
+  {
+    "quote": "Automated emails yield 52% higher open rates, 332% higher CTR, 2,361% higher conversions than campaigns."
+  },
+  {
+    "quote": "Transactional emails convert at rates 22 times higher than campaign emails."
+  },
+  {
+    "quote": "Personalized subject lines increase open rates by 10\u201314%."
+  },
+  {
+    "quote": "Use of emojis boosts engagement, as seen by 73% of marketers reporting positive impact."
+  },
+  {
+    "quote": "Back-in-stock emails average a 59% open rate and 5.3% conversion rate."
+  },
+  {
+    "quote": "Welcome emails consistently achieve 69\u201382% open rates."
+  },
+  {
+    "quote": "Email CTR averages 2\u20135%, depending on industry."
+  },
+  {
+    "quote": "Unsubscribe rates average around 0.1%."
+  },
+  {
+    "quote": "Open rates dropped after Apple Mail Privacy but rebounded ~3.5%, while click-to-open fell 3.6%."
+  },
+  {
+    "quote": "Email revenue totaled $12.33\u202fB globally in 2024."
+  },
+  {
+    "quote": "Constant Contact saw average metrics of 34.5% open, 1.3% click rate."
+  },
+  {
+    "quote": "Good campaign open benchmarks range from 30\u201340%."
+  },
+  {
+    "quote": "Back-in-stock email open rates outperform regular campaigns by ~20%."
+  },
+  {
+    "quote": "Email ROI in the US averages $68 per $1 spent, the highest globally."
+  },
+  {
+    "quote": "Email drives 50% of online purchases from marketing channels."
+  },
+  {
+    "quote": "One-third of users check their email 3\u20135\u00d7 per day, 19% more than 20\u00d7."
+  },
+  {
+    "quote": "Campaign CTR averages 1.29%, top 10% land 4.74%."
+  },
+  {
+    "quote": "Automated flow CTR averages 4.67%, with top performers hitting 12.2%."
+  },
+  {
+    "quote": "SMS open rates reach 98%, compared to 20\u201330% for email."
+  },
+  {
+    "quote": "90\u201395% of SMS are read within 3 minutes."
+  },
+  {
+    "quote": "SMS response rates average 45%, versus 6% for email."
+  },
+  {
+    "quote": "SMS CTR ranges between 19\u201336%, significantly higher than email."
+  },
+  {
+    "quote": "SMS conversion rates hover around 15%."
+  },
+  {
+    "quote": "SMS channel is projected to be a $12.6\u202fB market by 2025."
+  },
+  {
+    "quote": "US SMS market grew at a 20.3% CAGR (2019\u20132025)."
+  },
+  {
+    "quote": "Businesses see an average of $71 ROI per $1 spent on SMS."
+  },
+  {
+    "quote": "77% of consumers value SMS for time-sensitive updates."
+  },
+  {
+    "quote": "71% of consumers opted into SMS communication in the last year."
+  },
+  {
+    "quote": "In 2023, 86% of businesses used SMS marketing\u2014a 56% YoY increase."
+  },
+  {
+    "quote": "SMS opt-out rates are typically low at 1\u20132%."
+  },
+  {
+    "quote": "16% of brands have SMS opt-out rates below 1%."
+  },
+  {
+    "quote": "SMS coupons are redeemed 10\u00d7 more often than email coupons."
+  },
+  {
+    "quote": "53% of marketers place SMS in their top 3 revenue-driving channels."
+  },
+  {
+    "quote": "SMS campaigns in finance & healthcare exceed 20% conversion rates."
+  },
+  {
+    "quote": "Gen Z and Millennials prefer SMS over email for offers and notifications."
+  },
+  {
+    "quote": "95% of US adults own SMS-enabled smartphones."
+  },
+  {
+    "quote": "60% of US consumers prefer getting coupons via SMS."
+  },
+  {
+    "quote": "SMS campaigns outperform email with 36% higher CTR."
+  },
+  {
+    "quote": "WhatsApp has 2\u202fB monthly active users globally in 2025."
+  },
+  {
+    "quote": "WhatsApp is available in over 180 countries and supports more than 60 languages, making it a truly global messaging platform."
+  },
+  {
+    "quote": "India has the largest WhatsApp user base at 535\u2013854\u202fM monthly users."
+  },
+  {
+    "quote": "Brazil ranks as the second-largest WhatsApp market globally, with 139\u2013148 million monthly active users."
+  },
+  {
+    "quote": "Indonesia is the third-largest WhatsApp market with 86\u2013112 million users."
+  },
+  {
+    "quote": "The United States has around 98 million WhatsApp users."
+  },
+  {
+    "quote": "99% open rate makes WhatsApp messages incredibly engaging."
+  },
+  {
+    "quote": "98% of messages are opened within 90 seconds."
+  },
+  {
+    "quote": "WhatsApp business messages achieve 45\u201360% conversion rates."
+  },
+  {
+    "quote": "15% average CTR on WhatsApp marketing messages."
+  },
+  {
+    "quote": "Chatbot sequences see 28% lead-to-conversion rates."
+  },
+  {
+    "quote": "68% of customers repeat purchases after WhatsApp interactions."
+  },
+  {
+    "quote": "66% of users made purchases after WhatsApp engagements."
+  },
+  {
+    "quote": "69% more likely to buy when WhatsApp customer support is available."
+  },
+  {
+    "quote": "57% of consumers use WhatsApp to interact with brands regularly."
+  },
+  {
+    "quote": "70% say WhatsApp improves brand perception."
+  },
+  {
+    "quote": "73% abandon purchases if brands respond slowly on WhatsApp."
+  },
+  {
+    "quote": "56% paused purchases due to slow WhatsApp replies."
+  },
+  {
+    "quote": "64% are willing to spend more if brands are active on WhatsApp."
+  },
+  {
+    "quote": "Over 200\u202fM businesses use WhatsApp Business monthly."
+  }
+]
