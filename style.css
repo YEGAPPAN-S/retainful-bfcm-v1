@@ -1,17 +1,16 @@
+/* General Body and Page Styling */
 body {
     font-family: 'Outfit', sans-serif;
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    height: 90vh;
+    height: 100vh;
     background-color: #fff;
     margin: 0 auto;
     padding: 30px;
     width: 90%;
-    row-gap: 20px;
-    column-gap: 5%;
+    flex-wrap: wrap;
 }
 
 header {
@@ -34,22 +33,57 @@ header a:hover {
 
 footer {
     width: 100%;
+    margin-top: 20px;
 }
 
 #quote-container {
     text-align: left;
-    width: 60%;
+    width: 50%;
 }
 
 #quote {
-    font-size: 64px;
+    font-size: 54px;
     color: #1B1B22;
     line-height: 1.5;
+    font-weight: 700;
+    animation: fadeIn 2s ease-in;
+}
+
+#daily-news a {
+    padding: 8px 10px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #f85c1c;
+    color: #ffff;
+    border: 1px solid #f85c1c;
+    border-radius: 30px;
+    text-decoration: none;
+}
+
+#daily-news a:hover {
+    background-color: #fff;
+    color: #f85c1c;
+}
+
+#daily-news {
+    font-size: 20px;
+    color: #f85c1c;
+    font-weight: 700;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 10px;
+}
+
+#news-container h3 {
+    font-size: 20px;
+    color: #1b1b22;
     font-weight: 700;
 }
 
 #calendar-container {
-    width: 40%;
+    width: 50%;
     flex: 1;
     padding: 20px;
     text-align: center;
@@ -61,6 +95,7 @@ footer {
     margin-bottom: 20px;
 }
 
+/* Calendar Styles */
 #calendar-header {
     display: flex;
     justify-content: space-between;
@@ -90,7 +125,7 @@ footer {
     width: 150px;
 }
 
-button {
+#month-display button {
     padding: 8px 10px;
     font-size: 12px;
     margin: 5px;
@@ -101,35 +136,169 @@ button {
     border-radius: 30px;
 }
 
+/* Calendar Grid Styles */
 #calendar {
     width: 100%;
-    border-collapse: collapse;
-    height: 350px;
-    ;
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-th,
-td {
+.calendar-header-row {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 1px;
+    margin-bottom: 1px;
+}
+
+.calendar-header-cell {
+    padding: 15px;
+    text-align: center;
+    background-color: #f85c1c;
+    color: #fff;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 1px;
+    flex: 1;
+}
+
+.calendar-grid div span,
+.calendar-grid div .event {
+    animation: fadeIn 1s ease-in;
+}
+
+.calendar-day {
     padding: 15px;
     text-align: center;
     color: #1B1B22;
     font-size: 14px;
-}
-
-th {
-    background-color: #f85c1c;
-    color: #fff;
-    font-weight: 700;
-    border: 1px solid #fff;
-}
-
-td {
     background-color: #fff;
     border: 1px solid #f85c1c;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    min-height: 60px;
 }
 
-.today {
+.calendar-day.today {
     background-color: #f85c1c;
     color: #fff;
     font-weight: bold;
+}
+
+.calendar-day.empty {
+    background-color: transparent;
+}
+
+.event {
+    background-color: #f85c1c;
+    color: #fff;
+    font-weight: 500;
+    border-radius: 5px;
+    padding: 5px;
+    margin-top: 5px;
+    font-size: 12px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.calendar-day.today .event {
+    background-color: rgba(255, 255, 255, 0.3);
+    color: #fff;
+}
+
+.calendar-day:hover {
+    background-color: rgba(248, 92, 28, 0.1);
+}
+
+.calendar-day.today:hover {
+    background-color: #f85c1c;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+
+
+.notification-icon {
+    position: relative;
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: white;
+    font-size: 18px;
+}
+
+.notification-icon:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.1);
+}
+
+.notification-badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: #ff4757;
+    color: white;
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    font-size: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+}
+
+#news-container {
+    max-width: 35%;
+    margin: 2rem auto;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    display: none;
+    animation: slideDown 0.3s ease-out;
+    position: absolute;
+    top: 8%;
+    right: 8%;
+}
+
+#news-container.show {
+    display: block;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
