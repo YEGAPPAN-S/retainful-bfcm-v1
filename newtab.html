@@ -7,55 +7,65 @@
     <title>Retainful - Motivational Quotes</title>
     <link rel="stylesheet" href="style.css" />
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
 </head>
 
 <body>
     <header>
-        <a href="https://retainful.com">Retainful.com</a>
-        <a href="https://retainful.com/pricing">Pricing</a>
-        <a href="https://retainful.com/blog">Blog</a>
-        <button class="notification-icon" id="notification-btn" title="Toggle Daily News">
-            🔔
-            <span class="notification-badge">1</span>
-        </button>
+        <div id="news-container">
+            <h3>Today’s News : </h3>
+            <p id="daily-news">Loading daily news...</p>
+        </div>
+        <div>
+            <a href="https://afflr.io/one-shopify-podcast/">Shopify Podcast</a>
+            <a href="https://retainful.com/blog">Ecommerce Blogs</a>
+        </div>
     </header>
 
-    <!-- Retainful Daily News Section -->
-    <div id="news-container">
-        <h3>Retainful Daily News:</h3>
-        <p id="daily-news">Loading daily news...</p>
-    </div>
-
-    <!-- Motivational Quote Section -->
-    <div id="quote-container">
-        <p id="quote">Loading inspiring quote...</p>
-    </div>
-
-    <!-- Calendar Section -->
-    <div id="calendar-container">
-        <h2>BFCM Calendar</h2>
-        <div id="calendar-header">
-            <div id="year-display">
-                <span id="year"></span>
-            </div>
-            <div id="month-display">
-                <button id="prev-month">⪻</button>
-                <span id="month-name"></span>
-                <button id="next-month">⪼</button>
-            </div>
+    <div id="main-container">
+        <div id="quote-container">
+            <p id="quote">Loading inspiring quote...</p>
         </div>
-        <div id="calendar">
-            <!-- Day headers -->
-            <div class="calendar-header-row">
-                <div class="calendar-header-cell">Sun</div>
-                <div class="calendar-header-cell">Mon</div>
-                <div class="calendar-header-cell">Tue</div>
-                <div class="calendar-header-cell">Wed</div>
-                <div class="calendar-header-cell">Thu</div>
-                <div class="calendar-header-cell">Fri</div>
-                <div class="calendar-header-cell">Sat</div>
+
+        <!-- Calendar Section -->
+        <div id="calendar-container">
+            <h2>BFCM Preparation Calendar - <span id="year"></span></h2>
+            <div id="calendar-header">
+                <button id="prev-month"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                        viewBox="0 0 18 18" fill="none">
+
+                        <path id="Stroke 1" d="M11.625 14.25L6.375 9L11.625 3.75" stroke="#3F3F46" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" />
+
+                    </svg></button>
+                <span id="month-name"></span>
+                <button id="next-month"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                        viewBox="0 0 18 18" fill="none">
+                        <path d="M6.375 3.75L11.625 9L6.375 14.25" stroke="#3F3F46" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                    </svg></button>
             </div>
-            <div class="calendar-grid" id="calendar-days">
+            <div id="calendar">
+                <!-- Day headers -->
+                <div class="calendar-header-row">
+                    <div class="calendar-header-cell">Sun</div>
+                    <div class="calendar-header-cell">Mon</div>
+                    <div class="calendar-header-cell">Tue</div>
+                    <div class="calendar-header-cell">Wed</div>
+                    <div class="calendar-header-cell">Thu</div>
+                    <div class="calendar-header-cell">Fri</div>
+                    <div class="calendar-header-cell">Sat</div>
+                </div>
+                <div class="calendar-grid" id="calendar-days">
+                </div>
+                <div class="today-event-section">
+                    <p>Today’s Event :</p>
+                    <ul id="event-list">
+                        <li id="today-event"></li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
@@ -68,5 +78,4 @@
 
     <script src="content.js"></script>
 </body>
-
 </html>

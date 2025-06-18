@@ -3,7 +3,7 @@
   "name": "Retainful - Motivational Quotes Extension",
   "description": "Get inspired with motivational quotes every time you open a new tab.",
   "version": "1.0",
-  "author": "Yegappan",
+  "author": "Team Retainful",
   
   "permissions": [
     "storage"

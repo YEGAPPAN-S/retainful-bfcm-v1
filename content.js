@@ -1,4 +1,3 @@
-
 document.addEventListener("DOMContentLoaded", function () {
     // Fetch the local quotes.json file using chrome.runtime.getURL
     fetch(chrome.runtime.getURL('quotes.json'))
@@ -21,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         // Fetch Retainful Daily News from the Google Sheets CSV (Your public URL)
-        const sheetUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSUZTnTVogpZXJkPA9txOtmrqZmYM9YkaQLYhONO_-oErNgzt449gOp0--bq1LpgD5tfaW3i-a1ZGC8/pub?gid=0&single=true&output=csv';  // Your actual URL
+        const sheetUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSUZTnTVogpZXJkPA9txOtmrqZmYM9YkaQLYhONO_-oErNgzt449gOp0--bq1LpgD5tfaW3i-a1ZGC8/pub?gid=0&single=true&output=csv';
 
         fetch(sheetUrl)
             .then(response => {
@@ -43,18 +42,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 // Display the news content for today
                 if (todaysNews) {
-                    const newsContent = `${todaysNews.title} - ${todaysNews.description}`;
-
-                    // Check if there is an interlink text and link, and add it dynamically
-                    const interlink = todaysNews.interlinkText && todaysNews.link ?
-                        `<a href="${todaysNews.link}" target="_blank" class="news-link">${todaysNews.interlinkText}</a>` : '';
-
-                    document.getElementById('daily-news').innerHTML = `${newsContent} ${interlink}`;
+                    // FIX: Actually display the news content
+                    document.getElementById('daily-news').textContent = todaysNews.description;
                 } else {
                     document.getElementById('daily-news').textContent = "No news available for today.";
                 }
             })
             .catch((error) => {
+                console.error('Error fetching daily news:', error);
                 document.getElementById('daily-news').textContent = "Internet is off - Unable to load daily news.";
             });
     }
@@ -74,9 +69,13 @@ document.addEventListener("DOMContentLoaded", function () {
     // Initialize the current date to actual current date
     const today = new Date();
     let currentYear = today.getFullYear();
-    let currentMonth = today.getMonth(); // Current month (0-11)
-
+    let currentMonth = today.getMonth();
     let bfcmEvents = {};  // To store fetched BFCM events
+
+    // Create tooltip element for hover events
+    const tooltip = document.createElement('div');
+    tooltip.className = 'event-tooltip';
+    document.body.appendChild(tooltip);
 
     // Fetch BFCM events JSON once
     fetch(chrome.runtime.getURL('bfcm_events.json'))
@@ -87,12 +86,15 @@ document.addEventListener("DOMContentLoaded", function () {
                 bfcmEvents[event.date] = event.event;
             });
 
-            // Once events are fetched, generate the calendar
+            // Once events are fetched, generate the calendar and display today's event
             generateCalendar(currentYear, currentMonth);
+            displayTodayEvent();
         })
-        .catch(() => {
+        .catch((error) => {
+            console.error('Error loading BFCM events:', error);
             // Generate calendar even if BFCM events fail to load
             generateCalendar(currentYear, currentMonth);
+            displayTodayEvent();
         });
 
     // Function to update the year and month display
@@ -102,18 +104,64 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById('month-name').textContent = monthName;
     }
 
+    // Function to display today's event only
+    function displayTodayEvent() {
+        const todayEventElement = document.getElementById('today-event');
+        const todayEventSection = document.querySelector('.today-event-section');
+
+        // Get today's date
+        const today = new Date();
+        const todayStr = `${today.getFullYear()}-${String(today.getMonth() + 1).padStart(2, '0')}-${String(today.getDate()).padStart(2, '0')}`;
+
+        // Check if there's an event for today
+        if (bfcmEvents[todayStr]) {
+            todayEventElement.textContent = bfcmEvents[todayStr];
+            todayEventSection.style.display = 'block';
+        } else {
+            // Hide the entire today-event-section if no event
+            todayEventSection.style.display = 'none';
+        }
+    }
+
+    // Function to show tooltip
+    function showTooltip(event, content) {
+        tooltip.textContent = content;
+        tooltip.style.display = 'block';
+        
+        // Position tooltip near mouse cursor
+        const rect = event.target.getBoundingClientRect();
+        tooltip.style.left = (rect.left + rect.width / 2) + 'px';
+        tooltip.style.top = (rect.top - tooltip.offsetHeight - 8) + 'px';
+        
+        // Adjust if tooltip goes off screen
+        const tooltipRect = tooltip.getBoundingClientRect();
+        if (tooltipRect.left < 0) {
+            tooltip.style.left = '8px';
+        }
+        if (tooltipRect.right > window.innerWidth) {
+            tooltip.style.left = (window.innerWidth - tooltipRect.width - 8) + 'px';
+        }
+        if (tooltipRect.top < 0) {
+            tooltip.style.top = (rect.bottom + 8) + 'px';
+        }
+    }
+
+    // Function to hide tooltip
+    function hideTooltip() {
+        tooltip.style.display = 'none';
+    }
+
     // Function to generate the calendar based on year and month
     function generateCalendar(year, month) {
         updateYearAndMonth(year, month);
 
         const firstDayOfMonth = new Date(year, month, 1).getDay();
         const lastDateOfMonth = new Date(year, month + 1, 0).getDate();
-        const today = new Date();
+        const todayDate = new Date(); // Renamed to avoid confusion with outer scope
 
         const calendarGrid = document.getElementById("calendar-days");
         calendarGrid.innerHTML = ""; // Clear any existing calendar
 
-        // Total cells available (5 rows × 7 days = 35 cells)
         const totalCells = 35;
 
         // Create an array to hold all calendar cells
@@ -180,16 +228,34 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
 
                 // Check if the current date is today
-                if (cellData.day === today.getDate() && today.getMonth() === month && today.getFullYear() === year) {
+                if (cellData.day === todayDate.getDate() &&
+                    todayDate.getMonth() === month &&
+                    todayDate.getFullYear() === year &&
+                    !cellData.isOverflow) { // Don't highlight overflow days as today
                     dayCell.classList.add("today");
                 }
 
-                // Check if the current date has a BFCM event
+                // Check if this date has an event and add has-event class
                 if (bfcmEvents[currentDateStr]) {
-                    const eventDiv = document.createElement("div");
-                    eventDiv.classList.add("event");
-                    eventDiv.textContent = bfcmEvents[currentDateStr];
-                    dayCell.appendChild(eventDiv);
+                    dayCell.classList.add("has-event");
+                    
+                    // Add hover event listeners for tooltip
+                    dayCell.addEventListener('mouseenter', function(event) {
+                        showTooltip(event, bfcmEvents[currentDateStr]);
+                    });
+                    
+                    dayCell.addEventListener('mouseleave', function() {
+                        hideTooltip();
+                    });
+                    
+                    // Handle mouse movement to reposition tooltip
+                    dayCell.addEventListener('mousemove', function(event) {
+                        if (tooltip.style.display === 'block') {
+                            const rect = event.target.getBoundingClientRect();
+                            tooltip.style.left = (rect.left + rect.width / 2) + 'px';
+                            tooltip.style.top = (rect.top - tooltip.offsetHeight - 8) + 'px';
+                        }
+                    });
                 }
             }
 
@@ -217,38 +283,28 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-// CSV Parser function (to match the format of your CSV)
+// Improved CSV Parser function
 function parseCSV(data) {
-    const rows = data.split('\n');
-    const parsed = rows.map(row => {
+    const rows = data.split('\n').filter(row => row.trim() !== ''); // Remove empty rows
+    const parsed = [];
+
+    for (let i = 1; i < rows.length; i++) { // Skip header row
+        const row = rows[i].trim();
+        if (!row) continue;
+
+        // Simple CSV parsing - handles basic cases
+        // For more complex CSV with quotes/commas, consider using a CSV library
         const columns = row.split(',');
-        // Skip the first row (header row) and process only valid data rows
-        if (columns.length === 5 && columns[0] !== 'Date') {
-            return {
-                date: columns[0],
-                title: columns[1],
-                description: columns[2],
-                interlinkText: columns[3],
-                link: columns[4]
-            };
+
+        if (columns.length >= 2) {
+            parsed.push({
+                date: columns[0].trim(),
+                description: columns.slice(1).join(',').trim() // Join remaining columns in case description has commas
+            });
         }
-    }).filter(item => item !== undefined);
+    }
+
     return parsed;
 }
 
 console.log("Build with ♥ by Retainful Team");
-
-const notificationBtn = document.getElementById('notification-btn');
-const newsContainer = document.getElementById('news-container');
-const notificationBadge = document.querySelector('.notification-badge');
-
-notificationBtn.addEventListener('click', function () {
-    newsContainer.classList.toggle('show');
-
-    // Hide badge when news is opened
-    if (newsContainer.classList.contains('show')) {
-        notificationBadge.style.display = 'none';
-    } else {
-        notificationBadge.style.display = 'flex';
-    }
-});
